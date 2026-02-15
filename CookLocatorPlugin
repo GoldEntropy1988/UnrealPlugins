@@ -1,0 +1,43 @@
+# CookLocator
+Find missing assets from your cook logs without the headache.
+
+## What it does
+When you cook your project and stuff breaks, you get a giant log file full of errors. This plugin reads those logs and shows you exactly what's missing. Click on an entry and it'll take you right to it in the Content Browser (or the folder if the asset is gone).
+
+## Works with
+UE 4.27, 5.0, 5.1, 5.2, 5.3+
+
+## Installation
+Download from the marketplace and enable it in Edit → Plugins. Or just drop the CookLocator folder into your project's Plugins directory and restart.
+
+## How to use
+Click the CookLocator icon in the toolbar. You'll get a window with a few buttons:
+- **Load Cook Log File** - Pick a .txt or .log file from your cook
+- **Load Latest Cook Log** - Automatically grabs the newest one from AutomationTool
+- **Focus in Content Browser** - Jumps to the selected asset
+- **Export to CSV** - Save the list for later
+That's it. Load a log, see what's broken, click to navigate.
+
+## Settings
+Go to Project Settings → Plugins → Cook Locator if you want to tweak things:
+- Change what error patterns to look for
+- Set a default export path
+- Turn off notifications if they annoy you
+- Auto-remove duplicates
+
+## Blueprint functions
+All the main functions are exposed to Blueprint if you want to automate stuff:
+- `LoadCookLogFile`
+- `LoadLatestCookLogFile`
+- `FocusAssetsInContentBrowser`
+- `SimplifyAndDeduplicateCookEntries`
+- `SaveCookEntriesToFile`
+
+## Common issues
+**Can't find the plugin?** Make sure it's enabled and restart the editor.
+**Auto-load doesn't work?** It looks in `%APPDATA%/Unreal Engine/AutomationTool/Logs/`. If your logs are somewhere else, just use the manual load button.
+**Asset doesn't exist?** The plugin will take you to the folder instead so you can see what's around it.
+**Big log files are slow?** Files under 10MB load instantly. Bigger ones take a bit longer but still work fine. You can also export to CSV and reload that next time - it's faster.
+
+## License
+Made by GoldEntropy. Do whatever you want with it in your projects.
