@@ -6,6 +6,9 @@ When you cook your project and stuff breaks, you get a giant log file full of er
 
 ## Works with
 UE 4.27, 5.0, 5.1, 5.2, 5.3+
+## First time setup
+When you first enable the plugin, Unreal will ask to rebuild the module. 
+Click "Yes" and wait a few seconds. This is normal for all C++ plugins.
 
 ## Installation
 Download from the marketplace and enable it in Edit → Plugins. Or just drop the CookLocator folder into your project's Plugins directory and restart.
