@@ -1,7 +1,9 @@
 # TexDupe - Texture Duplicate Finder
+
 A high-performance Unreal Engine plugin for finding duplicate textures in your project.
 
 ## Features
+
 - **Pixel-Perfect Detection**: Compares every pixel to ensure 100% accuracy
 - **Fast Scanning**: Optimized hash-based algorithm with lazy evaluation
 - **Settings Comparison**: Optional texture settings matching (compression, format, etc.)
@@ -9,6 +11,7 @@ A high-performance Unreal Engine plugin for finding duplicate textures in your p
 - **Auto-Scan**: Automatically scans all project textures when none selected
 
 ## Usage
+
 1. Open the TexDupe window from the editor
 2. (Optional) Select textures in Content Browser to scan specific assets
 3. Click **Refresh** to start scanning
@@ -16,12 +19,14 @@ A high-performance Unreal Engine plugin for finding duplicate textures in your p
 5. Click any texture to locate it in Content Browser
 
 ## UI Elements
+
 - **Refresh**: Start duplicate scan
 - **Clear**: Clear results list
 - **Match Settings**: Enable to only find duplicates with identical texture settings
 - **Search**: Filter results by texture name
 
 ## Result Columns
+
 - **Group**: Duplicate group number
 - **Name**: Texture asset name (color-coded by group)
 - **Path**: Full asset path
@@ -29,18 +34,36 @@ A high-performance Unreal Engine plugin for finding duplicate textures in your p
 - **Size**: Texture dimensions (WIDTHxHEIGHT)
 
 ## How It Works
+
 1. **Quick Filter**: Groups textures by size and file size
 2. **Sample Check**: Compares 36 sample points for potential duplicates
 3. **Pixel Verification**: Full pixel-by-pixel comparison for accuracy
 4. **Settings Check**: (Optional) Compares texture import settings
 
+## What This Tool Does
+
+TexDupe performs **pixel-by-pixel image analysis** to find exact duplicates. Unlike hash-based tools, it guarantees 100% accuracy by comparing every pixel in the texture. This ensures you only see true duplicates, not just similar-looking textures.
+
+## Why Use TexDupe
+
+Large projects often contain duplicated textures due to:
+- Multiple team members importing the same assets
+- Marketplace pack overlaps
+- Outsourced asset delivery
+- Manual copy operations
+
+TexDupe helps you quickly identify and clean them up before shipping, reducing memory waste and improving asset organization.
+
 ## Performance
+
 - Skips non-texture assets automatically
 - Only loads textures when needed
 - Progress bars show real-time status
 - Cancellable at any time
 
 ## Notes
+
 - Textures must have dimensions divisible by 4
 - Only finds exact pixel matches (not similar images)
 - Settings comparison includes: compression, mip settings, LOD group, SRGB, filter mode, address mode, max size
+- Editor-only — no runtime overhead
